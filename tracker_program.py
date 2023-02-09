@@ -13,14 +13,20 @@ intents = discord.Intents.default()
 intents.message_content = True
 client = discord.Client(intents=intents)
 
-
 @client.event
 async def on_ready():   
+    is_working = True
+    prev_min = -9
     text_channel = client.get_channel(1072257836861624401)
     #print(text_channel);
     while True:
         curr = time.localtime().tm_min
-        if curr in (5,10,15,20,25,30,35,40,45,50):  
+        if prev_min != curr and curr in (5,10,15,20,25,32,35,40,45,50):
+            is_working = True;
+            
+        if curr in (5,10,15,20,25,32,35,40,45,50) and is_working:
+            is_working=False;
+            prev_min = curr  
             temp = shlex.split('node get_positions.js')
             values = subprocess.run(temp,capture_output=True);
             asset_list = values.stdout.decode('ascii').split(',')
@@ -143,6 +149,5 @@ async def on_ready():
             embed.add_field(name="Project Stats:", value=f'• liquid-Asset Value: ${liq_value-tot_positions_val} (LP Positions Exempt)\n• Cumulative-Asset Value: ${liq_value} (LP positions exempt)', inline=False)
 
             await text_channel.send(embed=embed)
-            await asyncio.sleep(60);
      
 client.run('MTA3MjI1NDI4MTMxNjU2OTIzOA.G5uKsU.LeJSZvDxlZsfobB3eIHfDoH8rm9vHiDeMUjhpk')
