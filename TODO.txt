@@ -1,0 +1,4 @@
+1-wait for viggy to create spl-tokens in treasury Wallet
+2-see ME wallet link thing
+3-Try to migrate scrolls
+4-Try tackling positions thing with orca and the NFTs 
