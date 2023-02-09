@@ -26,8 +26,12 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
     const client = (0, whirlpools_sdk_1.buildWhirlpoolClient)(ctx);
     const connection = provider.connection;
     const atas = yield connection.getParsedTokenAccountsByOwner(provider.wallet.publicKey, { programId: spl_token_1.TOKEN_PROGRAM_ID });
+    const sleep = (milliseconds) => __awaiter(void 0, void 0, void 0, function* () {
+        return new Promise(resolve => setTimeout(resolve, milliseconds));
+    });
     let final_res = [0.0, 0.0, 0.0];
     for (var p of atas.value) {
+        yield sleep(500);
         try {
             // console.log(c)
             //const positionMint = new PublicKey(p.account.data.parsed.info.mint)
@@ -67,5 +71,5 @@ main()
     //console.log("Done");
 })
     .catch((e) => {
-    console.error(e);
+    console.error(e.toString());
 });

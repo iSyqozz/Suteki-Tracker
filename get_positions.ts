@@ -23,8 +23,14 @@ const main = async() => {
     const connection = provider.connection;
     const atas = await connection.getParsedTokenAccountsByOwner(provider.wallet.publicKey,{programId: TOKEN_PROGRAM_ID})
 
+    const sleep = async (milliseconds:number) => {
+      return new Promise(resolve => setTimeout(resolve, milliseconds))
+    }
+    
     let final_res = [0.0,0.0,0.0];
     for (var p of atas.value){
+      await sleep(500);
+
     try{
 
     // console.log(c)
@@ -68,5 +74,5 @@ main()
     //console.log("Done");
   })
   .catch((e) => {
-    console.error(e);
+    console.error(e.toString());
   });
