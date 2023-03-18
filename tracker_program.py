@@ -22,7 +22,7 @@ async def on_ready():
     #print(text_channel);
     while True:
         curr = time.localtime().tm_min
-        if curr in (35,40,44,48,2,29,12,19,25,32,52,58) and not done:
+        if curr.tm_min in (10) and curr.tm_hour in (9,21):
           done = False
           try:
             is_working=False;
@@ -160,6 +160,5 @@ async def on_ready():
             print (repr(e));
             await asyncio.sleep(10);
             continue
-        elif curr not in (37,40,44,48,2,6,12,19,25,32,52,58):
-           done = False
+
 client.run('MTA3MjI1NDI4MTMxNjU2OTIzOA.G5uKsU.LeJSZvDxlZsfobB3eIHfDoH8rm9vHiDeMUjhpk')

@@ -33,7 +33,7 @@ const main = async() => {
     let final_res = [0.0,0.0,0.0,0];
     var num:number = 0 ; 
     for (var p of atas.value){
-      await sleep(500);
+      await sleep(15000);
 
     try{
 

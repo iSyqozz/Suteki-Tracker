@@ -37,7 +37,7 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
     let final_res = [0.0, 0.0, 0.0, 0];
     var num = 0;
     for (var p of atas.value) {
-        yield sleep(500);
+        yield sleep(15000);
         try {
             // console.log(c)
             //const positionMint = new PublicKey(p.account.data.parsed.info.mint)
