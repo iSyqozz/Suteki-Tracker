@@ -18,11 +18,11 @@ done = False
 @client.event
 async def on_ready():
     global done   
-    text_channel = client.get_channel(1073175360902008852)
+    text_channel = client.get_channel(1072257836861624401)
     #print(text_channel);
     while True:
         curr = time.localtime().tm_min
-        if curr in (37,40,44,48,2,6,12,19,25,32,52,58) and not done:
+        if curr in (35,40,44,48,2,29,12,19,25,32,52,58) and not done:
           done = False
           try:
             is_working=False;
@@ -149,7 +149,7 @@ async def on_ready():
             embed.add_field(name="Treasury Wallet Balance:", value=f"--> {curr_tres} Sol (${tres_sol_val})\n--> {tres_usdc} USDC (${tres_usdc_val})\n--> {tres_bonk} Bonk (${tres_bonk_val})\n\n--> Assets Value: ${total_tres_val}\n\nhttps://solscan.io/account/5uG1TFNxa8VoZRQggn1t55ny5EN3U88eB7m2yHWmZ2rk#tokenAccounts", inline=False)
             embed.add_field(name="Royalties Wallet Balance:", value=f"--> {curr_royalties} Sol (${royalties_sol_val})\n--> 0.0 USDC ($0)\n--> 0.0 Bonk ($0)\n\n--> Assets Value: ${royalties_sol_val}\n\nhttps://solscan.io/account/2ApaxgJpTgjaoANNTwxKvJXk9F4upRCmcXYLoNxBdMZJ", inline=False)
             embed.add_field(name="LP Wallet Balance:", value=f"--> {curr_lp} Sol (${lp_sol_val})\n--> {lp_usdc} USDC (${lp_usdc_val})\n--> {lp_bonk} Bonk (${lp_bonk_val})\n\n--> Assets Value: ${total_lp_val}\n\nhttps://solscan.io/account/pDhcgHW36JSG2TqKtVhAx9HauFZK3pcFkVE9kLRXCHb", inline=False)
-            embed.add_field(name="Open LP Positions:", value=f'--> {len(asset_list)} Open Positions\n--> {asset_list[0]} Sol (${positions_sol_val})\n--> {asset_list[1]} USDC (${positions_usdc_val})\n--> {asset_list[2]} Bonk (${positions_bonk_val})\n\n--> Assets Value: ${"{:.3f}".format(tot_positions_val)}', inline=False)
+            embed.add_field(name="Open LP Positions:", value=f'--> {(asset_list[3])} Open Positions\n--> {asset_list[0]} Sol (${positions_sol_val})\n--> {asset_list[1]} USDC (${positions_usdc_val})\n--> {asset_list[2]} Bonk (${positions_bonk_val})\n\n--> Assets Value: ${"{:.3f}".format(tot_positions_val)}', inline=False)
             embed.add_field(name="Project Stats:", value=f'• liquid-Asset Value: ${"{:.3f}".format(liq_value-tot_positions_val)} (LP Positions Exempt)\n• Cumulative-Asset Value: ${"{:.3f}".format(liq_value)}', inline=False);
 
             if not done:

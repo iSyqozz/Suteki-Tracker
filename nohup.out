@@ -1837,3 +1837,4 @@ Loop thread traceback (most recent call last):
     fd_event_list = self._selector.poll(timeout)
 
 [30;1m2023-02-09 23:37:23[0m [34;1mINFO    [0m [35mdiscord.gateway[0m Shard ID None session has been invalidated.
+[30;1m2023-02-09 23:37:35[0m [34;1mINFO    [0m [35mdiscord.gateway[0m Shard ID None has connected to Gateway (Session ID: ca9ba84c79676b82e46714d781c3ce19).
