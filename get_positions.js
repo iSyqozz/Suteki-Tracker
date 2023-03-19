@@ -37,7 +37,6 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
     let final_res = [0.0, 0.0, 0.0, 0];
     var num = 0;
     for (var p of atas.value) {
-        yield sleep(15000);
         try {
             // console.log(c)
             //const positionMint = new PublicKey(p.account.data.parsed.info.mint)
@@ -72,6 +71,7 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
             //    final_res[2]+=Number(token2);
             //}
             //console.log(token1,token2)
+            yield sleep(15000);
         }
         catch (e) {
             //console.log('not a a whirlpool position nft account')

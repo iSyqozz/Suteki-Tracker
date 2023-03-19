@@ -33,8 +33,6 @@ const main = async() => {
     let final_res = [0.0,0.0,0.0,0];
     var num:number = 0 ; 
     for (var p of atas.value){
-      await sleep(15000);
-
     try{
 
     // console.log(c)
@@ -79,6 +77,8 @@ const main = async() => {
         //    final_res[2]+=Number(token2);
         //}
         //console.log(token1,token2)
+        await sleep(15000);
+
     }catch(e){
     //console.log('not a a whirlpool position nft account')
     //console.log(p)

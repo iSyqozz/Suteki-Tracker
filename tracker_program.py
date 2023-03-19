@@ -21,12 +21,12 @@ async def on_ready():
     text_channel = client.get_channel(1072257836861624401)
     #print(text_channel);
     while True:
-        curr = time.localtime().tm_min
+        curr = time.localtime()
         if curr.tm_min in (10) and curr.tm_hour in (9,21):
           done = False
           try:
             is_working=False;
-            prev_min = curr  
+            prev_min = curr.tm_min
             temp = shlex.split('node get_positions.js')
             values =  subprocess.run(temp,capture_output=True);
             asset_list = values.stdout.decode('ascii').split(',')
