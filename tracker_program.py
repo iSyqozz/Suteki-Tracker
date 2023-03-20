@@ -22,7 +22,7 @@ async def on_ready():
     #print(text_channel);
     while True:
         curr = time.localtime()
-        if curr.tm_min in (10) and curr.tm_hour in (9,21):
+        if curr.tm_min in (10,) and curr.tm_hour in (9,21):
           done = False
           try:
             is_working=False;
