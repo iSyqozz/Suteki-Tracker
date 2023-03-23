@@ -22,7 +22,7 @@ async def on_ready():
     #print(text_channel);
     while True:
         curr = time.localtime()
-        if curr.tm_min in (10,) and curr.tm_hour in (9,21):
+        if curr.tm_min in (48,) and curr.tm_hour in (9,21):
           done = False
           try:
             is_working=False;
@@ -152,9 +152,7 @@ async def on_ready():
             embed.add_field(name="Open LP Positions:", value=f'--> {(asset_list[3])} Open Positions\n--> {asset_list[0]} Sol (${positions_sol_val})\n--> {asset_list[1]} USDC (${positions_usdc_val})\n--> {asset_list[2]} Bonk (${positions_bonk_val})\n\n--> Assets Value: ${"{:.3f}".format(tot_positions_val)}', inline=False)
             embed.add_field(name="Project Stats:", value=f'• liquid-Asset Value: ${"{:.3f}".format(liq_value-tot_positions_val)} (LP Positions Exempt)\n• Cumulative-Asset Value: ${"{:.3f}".format(liq_value)}', inline=False);
 
-            if not done:
-              await text_channel.send(embed=embed)
-              done = True
+            await text_channel.send(embed=embed)
             await asyncio.sleep(60);
           except Exception as e:
             print (repr(e));
